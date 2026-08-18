@@ -1,7 +1,0 @@
-<launch>
-    <arg name="grab_param" default="grab_pose"/>
-    
-    <node name="visual_grab" type="visual_grab.py" pkg="cobot_arm" output="screen">
-    		<param name="grab_param" value="$(arg grab_param)" />
-    </node>
-</launch>
