@@ -1,0 +1,26 @@
+rm_driver:
+  ros__parameters:
+    # RM75 controller TCP connection.
+    arm_ip: "192.168.3.19"
+    tcp_port: 8080
+    arm_type: "RM_75"
+    arm_dof: 7
+
+    # The RK board receives active UDP reports at 192.168.3.210:8090.
+    udp_ip: "192.168.3.210"
+    udp_port: 8090
+    udp_cycle: 5
+    udp_force_coordinate: 0
+    udp_hand: false
+    udp_plus_base: false
+    udp_plus_state: false
+    udp_joint_speed_state: true
+    udp_lift_state: false
+    udp_expand_state: false
+    udp_arm_current_status: false
+    udp_aloha_state: false
+
+    # CANFD pass-through settings. Low-follow mode is selected by rm_control.
+    trajectory_mode: 0
+    radio: 0
+    arm_joints: ["joint1", "joint2", "joint3", "joint4", "joint5", "joint6", "joint7"]

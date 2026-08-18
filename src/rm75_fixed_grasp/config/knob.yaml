@@ -1,0 +1,50 @@
+# Rotary-knob AprilTag: printed ID 01 means AprilTag numeric ID 1.
+apriltag_knob:
+  ros__parameters:
+    family: 36h11
+    size: 0.03
+    max_hamming: 0
+    z_up: true
+    "tag.ids": [1]
+    "tag.frames": [knob_tag]
+    "tag.sizes": [0.03]
+
+rm75_turn_knob:
+  ros__parameters:
+    base_frame: base_link
+    end_effector_link: Link7
+    target_frame: knob_tag
+
+    # Copied from the proven button YAML. XYZ are base_link metres.
+    target_offset_base_xyz: [0.002, 0.038, -0.02]
+    precontact_distance: 0.20
+    contact_standoff: 0.15
+    maximum_precontact_translation: 0.50
+    maximum_contact_translation: 0.15
+    tf_timeout_seconds: 1.0
+    target_max_age_seconds: 0.75
+
+    # The two adjustable joint7 rotations, in degrees.
+    # Reverse both signs if physical left/right is opposite.
+    knob_pre_rotate_degrees: -30.0
+    knob_turn_degrees: 90.0
+    knob_max_abs_rotation_degrees: 90.0
+
+    return_joint_values: [-1.726572804260254, 1.281528042602539, 0.06112735036611557, 0.9086040542602539, -0.04837140129804611, -2.1544641860961913, 0.8764960515975952]
+    driver_speed: 10
+    driver_result_timeout_seconds: 90.0
+    joint_motion_timeout_seconds: 90.0
+    joint_position_tolerance: 0.03
+    joint_trajectory_duration_seconds: 4.0
+    # rm_control performs smooth cubic interpolation only for >3 points.
+    joint_trajectory_waypoints: 5
+
+    gripper_register_address: 40000
+    gripper_device: 1
+    gripper_modbus_type: 1
+    gripper_open_value: 100
+    gripper_close_value: 0
+    gripper_wait_seconds: 1.5
+
+    allow_motion: true
+    dry_run: false

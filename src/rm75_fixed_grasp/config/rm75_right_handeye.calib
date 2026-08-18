@@ -1,0 +1,20 @@
+parameters:
+  name: rm75_right_handeye
+  calibration_type: eye_in_hand
+  robot_base_frame: base_link
+  robot_effector_frame: Link7
+  tracking_base_frame: camera_link
+  tracking_marker_frame: grab_tag
+  freehand_robot_movement: true
+  move_group_namespace: /
+  move_group: manipulator
+transform:
+  translation:
+    x: 0.06973822803165149
+    y: -0.04682612218387391
+    z: 0.01893532437591489
+  rotation:
+    x: -0.28573606809818863
+    y: -0.6459743520710799
+    z: -0.2875677120966599
+    w: 0.6468205677107284

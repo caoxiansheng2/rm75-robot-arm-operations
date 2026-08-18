@@ -1,0 +1,12 @@
+uint16 cycle
+uint16 port
+uint16 force_coordinate
+string ip
+bool aloha_state_enable
+bool arm_current_status_enable
+bool expand_state_enable
+bool hand_enable
+bool joint_speed_enable
+bool lift_state_enable
+bool plus_base_enable
+bool plus_state_enable

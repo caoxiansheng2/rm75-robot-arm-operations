@@ -1,0 +1,34 @@
+# ROS 2 generated files
+build/
+install/
+log/
+**/logs/
+
+# Runtime output
+right_button_logs/
+right_press_button/
+right_qr_roundtrip/
+right_turn_knob/
+left_probe_service/run/
+left_probe_service/task_logs/
+right_button_service/run/
+right_button_service/task_logs/
+left_arm_pose_*.txt
+*.pid
+*.lock
+
+# Python
+__pycache__/
+*.py[cod]
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*~
+
+# Backup copies
+archive/
+*.bak
+*.before*
+*.before_*

@@ -1,0 +1,58 @@
+rm75_fixed_grasp:
+  ros__parameters:
+    planning_group: rm_group
+    base_frame: base_link
+    end_effector_link: Link7
+    target_frame: grab_tag
+    return_named_target: forward
+    return_joint_values: [-1.726572804260254, 1.281528042602539, 0.06112735036611557, 0.9086040542602539, -0.04837140129804611, -2.1544641860961913, 0.8764960515975952]
+    auto_return_after_execute: true
+
+    # Offset of the desired point from the tag centre in base_link XYZ.
+    # For a button 3 cm below the tag, change this to [0.0, 0.0, -0.03].
+    target_offset_base_xyz: [0.002, 0.050, -0.02]
+
+    # Both distances are measured along the automatically selected outward
+    # tag normal.  First stop 10 cm in front, then move in a straight line and
+    # leave Link7 5 cm from the tag.  Reduce contact_standoff gradually only
+    # after verifying the direction and the physical TCP offset.
+    precontact_distance: 0.20
+    contact_standoff: 0.14
+    execute_contact: true
+    auto_retract: true
+    # false: MoveJ_P to precontact, then MoveL to contact.  Both points use
+    # target_offset_base_xyz, so both are 2 cm below the tag in this config.
+    # Set true only when one direct MoveJ_P to contact is explicitly wanted.
+    single_stage_to_contact: false
+
+    eef_step: 0.005
+    jump_threshold: 0.0
+    minimum_cartesian_fraction: 0.98
+    position_tolerance: 0.01
+    orientation_tolerance: 0.10
+    velocity_scale: 0.20
+    acceleration_scale: 0.05
+    planning_time_seconds: 10.0
+    planning_attempts: 5
+    tf_timeout_seconds: 1.0
+    target_max_age_seconds: 0.75
+
+    # Per-stage hard travel limits. Requests exceeding them are rejected.
+    maximum_precontact_translation: 0.50
+    maximum_contact_translation: 0.15
+
+    # Use the RM75 controller's official pose IK and linear-motion commands.
+    # This avoids the MoveIt/KDL IK failure shown by the previous Pilz plan.
+    use_rm_driver_backend: true
+    driver_speed: 10
+    driver_result_timeout_seconds: 90.0
+
+    # Safe defaults. Enable real motion explicitly on the launch command.
+    allow_motion: true
+    dry_run: false
+
+    # auto_execute is intentionally controlled only by the launch file, so a
+    # YAML value cannot override the automatic/manual launch mode.
+    # The target must stay within 1 cm for 1.5 s before automatic execution.
+    auto_target_stability_seconds: 1.5
+    auto_target_position_threshold: 0.01

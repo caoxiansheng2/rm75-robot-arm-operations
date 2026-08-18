@@ -1,0 +1,10 @@
+apriltag:
+  ros__parameters:
+    family: 36h11
+    # Keep the requested physical edge length: 3 cm.
+    size: 0.03
+    max_hamming: 0
+    z_up: true
+    "tag.ids": [0]
+    "tag.frames": [grab_tag]
+    "tag.sizes": [0.03]

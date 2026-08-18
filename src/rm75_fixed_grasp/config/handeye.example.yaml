@@ -1,0 +1,6 @@
+# Replace every value with a fresh hand-eye calibration result.
+# Do not reuse the old RM65 transform on an RM75-B.
+parent_frame: Link7
+child_frame: camera_link
+xyz: [0.0, 0.0, 0.0]
+rpy: [0.0, 0.0, 0.0]

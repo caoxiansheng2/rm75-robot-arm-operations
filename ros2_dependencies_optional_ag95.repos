@@ -1,0 +1,5 @@
+repositories:
+  dh_ag95_gripper_ros2:
+    type: git
+    url: https://github.com/ian-chuang/dh_ag95_gripper_ros2.git
+    version: humble

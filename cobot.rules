@@ -1,0 +1,2 @@
+# DH Robotics AG95 gripper
+KERNEL=="ttyUSB*", ATTRS{idVendor}=="0403", ATTRS{idProduct}=="6001", MODE:="0666", GROUP:="dialout", SYMLINK+="DH_hand"

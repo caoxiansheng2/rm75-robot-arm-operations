@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>rm75_fixed_grasp</name>
+  <version>0.1.0</version>
+  <description>ROS 2 fixed-point AprilTag approach coordinator for a RealMan RM75-B.</description>
+
+  <maintainer email="xbo@todo.local">xbo</maintainer>
+  <license>MIT</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <depend>geometry_msgs</depend>
+  <depend>control_msgs</depend>
+  <depend>moveit_msgs</depend>
+  <depend>moveit_ros_planning_interface</depend>
+  <depend>rclcpp</depend>
+  <depend>rclcpp_action</depend>
+  <depend>rm_ros_interfaces</depend>
+  <depend>sensor_msgs</depend>
+  <depend>std_msgs</depend>
+  <depend>std_srvs</depend>
+  <depend>tf2</depend>
+  <depend>tf2_geometry_msgs</depend>
+  <depend>tf2_ros</depend>
+  <depend>trajectory_msgs</depend>
+
+  <exec_depend>apriltag_ros</exec_depend>
+  <exec_depend>easy_handeye2</exec_depend>
+  <exec_depend>ament_index_python</exec_depend>
+  <exec_depend>launch</exec_depend>
+  <exec_depend>launch_ros</exec_depend>
+  <exec_depend>moveit_configs_utils</exec_depend>
+  <exec_depend>realsense2_camera</exec_depend>
+  <exec_depend>rm_75_config</exec_depend>
+  <exec_depend>rm_bringup</exec_depend>
+  <exec_depend>rviz2</exec_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>
